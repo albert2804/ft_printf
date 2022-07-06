@@ -6,7 +6,7 @@
 #    By: aestraic <aestraic@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/22 13:20:07 by aestraic          #+#    #+#              #
-#    Updated: 2022/07/05 19:32:55 by aestraic         ###   ########.fr        #
+#    Updated: 2022/07/06 15:21:23 by aestraic         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ libft:
 
 
 $(NAME):$(COMPILED)
-	@ar -rucv $(NAME) $^
+	@ar -rucv $(NAME) $(COMPILED)$^
 	@ar -rucv $(NAME) libft/*.o $^
 
 clean:
