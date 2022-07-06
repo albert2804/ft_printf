@@ -6,7 +6,7 @@
 #    By: aestraic <aestraic@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/22 13:20:07 by aestraic          #+#    #+#              #
-#    Updated: 2022/07/06 15:21:23 by aestraic         ###   ########.fr        #
+#    Updated: 2022/07/06 16:48:01 by aestraic         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,19 +22,21 @@ SRC = 	ft_conv_character.c\
 
 HEADER_PATH = header
 COMPILED = $(SRC:.c=.o)
+OBJ = $(COMPILED)
 
-all: libft $(NAME)
+all:  libft obj archive
 
+obj: $(OBJ)
+%.o : %.c 
+	cc -Wall -Wextra -Werror -I$(HEADER_PATH) -c $^ 	
+	
 libft:
-	@make all -C libft		
-%.o: %.c
-	cc -Wall -Wextra -Werror -I $(HEADER_PATH) -c $^ -o $@
+#	@echo MAKE LIBFT
+	@make all -C libft	
 
-
-$(NAME):$(COMPILED)
-	@ar -rucv $(NAME) $(COMPILED)$^
-	@ar -rucv $(NAME) libft/*.o $^
-
+archive:
+	@ar -rucv $(NAME) $(OBJ)$^
+	
 clean:
 	make clean -C libft
 	rm -f $(COMPILED)
