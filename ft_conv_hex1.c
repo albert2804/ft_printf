@@ -6,7 +6,7 @@
 /*   By: aestraic <aestraic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 11:07:47 by aestraic          #+#    #+#             */
-/*   Updated: 2022/07/05 19:29:23 by aestraic         ###   ########.fr       */
+/*   Updated: 2022/07/06 18:05:50 by aestraic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static int	ft_count_strlen(unsigned int n)
 	int	i;
 
 	i = 0;
-	while (n  != 0)
+	while (n != 0)
 	{
 		n = n / 16;
 		i++;

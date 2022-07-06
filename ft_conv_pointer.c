@@ -6,7 +6,7 @@
 /*   By: aestraic <aestraic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 11:07:47 by aestraic          #+#    #+#             */
-/*   Updated: 2022/07/05 15:41:12 by aestraic         ###   ########.fr       */
+/*   Updated: 2022/07/06 18:57:10 by aestraic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,26 @@ static char	*ft_reverse_string_ptr(char *s)
 	return (rev_str);
 }
 
+/*
+used to source code out of the conv_pointer function
+*/
+char	*build_string(unsigned long ptr, char *s)
+{	
+	int	i;
+
+	i = 0;
+	while (ptr != 0)
+	{
+		if (ptr % 16 > 9 && ptr % 16 < 16)
+			s[i] = ft_decide_letter_ptr((ptr % 16));
+		else
+			s[i] = (ptr % 16) + '0';
+		ptr = ptr / 16;
+		i++;
+	}
+	return (s);
+}
+
 int	ft_conv_pointer(va_list arg_list)
 {
 	unsigned long	ptr;
@@ -83,19 +103,10 @@ int	ft_conv_pointer(va_list arg_list)
 	if (!s)
 		return (0);
 	i = 0;
-	while (ptr != 0)
-	{
-		if (ptr % 16 > 9 && ptr % 16 < 16)
-			s[i] = ft_decide_letter_ptr((ptr % 16));
-		else
-			s[i] = (ptr % 16) + '0';
-		ptr = ptr / 16;
-		i++;
-	}
+	s = build_string(ptr, s);
 	s[count] = '\0';
 	s = ft_reverse_string_ptr(s);
 	ft_putstr_fd(s, 1);
 	free(s);
 	return (count + 2);
 }
-

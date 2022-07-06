@@ -6,13 +6,12 @@
 /*   By: aestraic <aestraic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 11:11:12 by aestraic          #+#    #+#             */
-/*   Updated: 2022/07/05 15:07:31 by aestraic         ###   ########.fr       */
+/*   Updated: 2022/07/06 18:07:05 by aestraic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdarg.h>
 #include <ft_printf.h>
-
 
 static int	ft_signs(char c, va_list arg_list)
 {
@@ -51,7 +50,6 @@ int	ft_printf(const char *s, ...)
 	count = 0;
 	i = 0;
 	len = 0;
-
 	va_start(arg_list, s);
 	len = ft_strlen(s);
 	while (i < len)
