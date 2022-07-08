@@ -6,7 +6,7 @@
 #    By: aestraic <aestraic@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/22 13:20:07 by aestraic          #+#    #+#              #
-#    Updated: 2022/07/06 16:48:01 by aestraic         ###   ########.fr        #
+#    Updated: 2022/07/07 14:59:11 by aestraic         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,4 +47,4 @@ fclean: clean
  
 re: fclean all
 
-.PHONY: clean fclean re bonus libft
+.PHONY: clean fclean re bonus libft archive
