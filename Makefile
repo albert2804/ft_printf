@@ -6,7 +6,7 @@
 #    By: aestraic <aestraic@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/22 13:20:07 by aestraic          #+#    #+#              #
-#    Updated: 2022/07/07 14:59:11 by aestraic         ###   ########.fr        #
+#    Updated: 2022/07/13 18:15:31 by aestraic         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ all:  libft obj archive
 
 obj: $(OBJ)
 %.o : %.c 
-	cc -Wall -Wextra -Werror -I$(HEADER_PATH) -c $^ 	
+	cc -Wall -Wextra -Werror -I$(HEADER_PATH) -c $^
 	
 libft:
 #	@echo MAKE LIBFT
