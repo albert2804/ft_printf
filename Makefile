@@ -6,7 +6,7 @@
 #    By: aestraic <aestraic@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/22 13:20:07 by aestraic          #+#    #+#              #
-#    Updated: 2022/07/13 18:15:31 by aestraic         ###   ########.fr        #
+#    Updated: 2022/08/24 12:36:34 by aestraic         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,18 +24,17 @@ HEADER_PATH = header
 COMPILED = $(SRC:.c=.o)
 OBJ = $(COMPILED)
 
-all:  libft obj archive
+all: $(NAME) libft 
 
-obj: $(OBJ)
 %.o : %.c 
 	cc -Wall -Wextra -Werror -I$(HEADER_PATH) -c $^
+
+$(NAME): $(COMPILED)
+	@ar -rucv $(NAME) $(COMPILED) $^
 	
 libft:
 #	@echo MAKE LIBFT
 	@make all -C libft	
-
-archive:
-	@ar -rucv $(NAME) $(OBJ)$^
 	
 clean:
 	make clean -C libft

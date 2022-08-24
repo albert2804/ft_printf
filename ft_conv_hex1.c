@@ -6,7 +6,7 @@
 /*   By: aestraic <aestraic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 11:07:47 by aestraic          #+#    #+#             */
-/*   Updated: 2022/07/06 18:05:50 by aestraic         ###   ########.fr       */
+/*   Updated: 2022/08/24 12:31:00 by aestraic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ static char	ft_decide_letter(unsigned int n, int k)
 	return (c);
 }
 
-int	ft_conv_hex1(va_list arg_list, int k)
+int	ft_conv_hex(va_list arg_list, int k, int counter)
 {
 	char			*s;
 	unsigned int	n;
@@ -78,18 +78,18 @@ int	ft_conv_hex1(va_list arg_list, int k)
 		return (1);
 	}
 	s = ft_calloc(ft_count_strlen(n) * sizeof(char), 2);
-	i = 0;
 	while (n != 0)
 	{
 		if (n % 16 > 9 && n % 16 < 16)
-			s[i] = ft_decide_letter((n % 16), k);
+			s[counter] = ft_decide_letter((n % 16), k);
 		else
-			s[i] = (n % 16) + '0';
+			s[counter] = (n % 16) + '0';
 		n = n / 16;
-		i++;
+		counter++;
 	}
 	s = ft_reverse_string_hex(s);
+	i = ft_strlen(s);
 	ft_putstr_fd(s, 1);
 	free(s);
-	return (ft_strlen(s));
+	return (i);
 }

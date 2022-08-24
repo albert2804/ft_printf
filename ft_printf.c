@@ -6,7 +6,7 @@
 /*   By: aestraic <aestraic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 11:11:12 by aestraic          #+#    #+#             */
-/*   Updated: 2022/07/06 18:07:05 by aestraic         ###   ########.fr       */
+/*   Updated: 2022/08/24 12:30:02 by aestraic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ static int	ft_signs(char c, va_list arg_list)
 	else if (c == 's')
 		i = ft_conv_str(arg_list);
 	else if (c == 'X')
-		i = ft_conv_hex1(arg_list, 0);
+		i = ft_conv_hex(arg_list, 0, 0);
 	else if (c == 'x')
-		i = ft_conv_hex1(arg_list, 1);
+		i = ft_conv_hex(arg_list, 1, 0);
 	else if (c == 'p')
 		i = ft_conv_pointer(arg_list);
 	else if (c == 'u')

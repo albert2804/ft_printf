@@ -6,7 +6,7 @@
 /*   By: aestraic <aestraic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 16:26:10 by aestraic          #+#    #+#             */
-/*   Updated: 2022/07/05 14:32:14 by aestraic         ###   ########.fr       */
+/*   Updated: 2022/08/24 12:29:48 by aestraic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int		ft_printf(const char *s, ...);
 int		ft_conv_character(va_list arg_list);
 int		ft_conv_int(va_list arg_list);
 int		ft_conv_str(va_list arg_list);
-int		ft_conv_hex1(va_list arg_list, int k);
+int		ft_conv_hex(va_list arg_list, int k, int counter);
 int		ft_conv_pointer(va_list arg_list);
 int		ft_conv_unsigned(va_list arg_list);
 char	*ft_itoa_u(unsigned int n);
