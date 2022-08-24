@@ -6,11 +6,10 @@
 /*   By: aestraic <aestraic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 11:11:12 by aestraic          #+#    #+#             */
-/*   Updated: 2022/08/24 12:30:02 by aestraic         ###   ########.fr       */
+/*   Updated: 2022/08/24 12:43:02 by aestraic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdarg.h>
 #include <ft_printf.h>
 
 static int	ft_signs(char c, va_list arg_list)
@@ -59,7 +58,7 @@ int	ft_printf(const char *s, ...)
 		else
 		{
 			count = count + ft_signs(s[i + 1], arg_list);
-		i++;
+			i++;
 		}
 		i++;
 	}
