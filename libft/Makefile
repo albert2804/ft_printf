@@ -6,7 +6,7 @@
 #    By: aestraic <aestraic@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/22 13:20:07 by aestraic          #+#    #+#              #
-#    Updated: 2022/07/05 19:35:13 by aestraic         ###   ########.fr        #
+#    Updated: 2022/08/24 13:52:26 by aestraic         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ COMPILED_BONUS = $(SRC_BONUS:.c=.o)
 all: $(NAME)
 
 %.o : %.c 
-	cc -Wall -Wextra -Werror -I $(HEADER_PATH) -c $^	
+	cc  -Wall -Wextra -Werror -I $(HEADER_PATH) -c $^	
 
 $(NAME): $(COMPILED)
 	@ar -rucv $(LIB_PATH)/$(NAME) $^
